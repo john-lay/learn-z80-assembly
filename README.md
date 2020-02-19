@@ -3,9 +3,13 @@ Working through generic Z80 tutorial, but applying it to the Gameboy.
 
 [Learn Multi platform Z80 Assembly Programming](https://www.youtube.com/playlist?list=PLp_QNRIYljFq-9nFiAUiAkRzAXfcZTBR_)
 
-# Lesson 1 - Load, increment, add and return
+Screenshots taken of the lessons running in [BGB](http://bgb.bircd.org/)
 
-Write to specific location in memory and play with values in registries `a` and `b`.
+# Lesson 1 - Load (ld), Increment (inc), Add (add) and Return (ret)
+
+Write to Working RAM and play with values in registries `a` and `b`.
+
+![screenshot of lesson1](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson1/lesson1-screenshot.png)
 
 # Build
 
