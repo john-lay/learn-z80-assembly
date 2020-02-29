@@ -21,7 +21,7 @@ Play with  labels and a loop to fill VRAM.
 Basic artithmetic calculations (addition and subtraction).
 Uses labels, label values (EQU), relative jump (jr), compare (cp), compare to zero (z), addition (add) and subtraction (sub)
 
-![screenshot of lesson3](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson1/lesson3-screenshot.png)
+![screenshot of lesson3](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson3/lesson3-screenshot.png)
 
 # Build
 
