@@ -16,6 +16,13 @@ Write to Working RAM and play with values in registries `a` and `b`.
 The LDIR (Load, Increment, Repeat) instruction is missing from the Gameboy instruction set.
 Play with  labels and a loop to fill VRAM.
 
+## Lesson 3 - Case Statement, 8-bit arithmetic
+
+Basic artithmetic calculations (addition and subtraction).
+Uses labels, label values (EQU), relative jump (jr), compare (cp), compare to zero (z), addition (add) and subtraction (sub)
+
+![screenshot of lesson3](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson1/lesson3-screenshot.png)
+
 # Build
 
 ## Prerequisites
