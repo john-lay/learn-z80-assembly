@@ -19,7 +19,7 @@ Play with  labels and a loop to fill VRAM.
 ## Lesson 3 - Case Statement, 8-bit arithmetic
 
 Basic artithmetic calculations (addition and subtraction).
-Uses labels, label values (EQU), relative jump (jr), compare (cp), compare to zero (z), addition (add) and subtraction (sub)
+Uses labels, label values (EQU), relative jump (jr), compare (cp), compare to zero (z), no-carry (nc), addition (add) and subtraction (sub)
 The DJNZ (Decrement, Jump if Not Zero) (only works in the `b` register) instruction is missing from the Gameboy instruction set.
 
 ![screenshot of lesson3](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson3/lesson3-screenshot.png)
