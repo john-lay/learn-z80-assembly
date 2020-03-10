@@ -39,7 +39,7 @@ SaveResult:
     ret
 
 LoadAndSaveResult:
-    ld a, c         ; read result from c
+    ld a, d        ; read result from c
     ld [_RAM], a    ; Save the result to working ram C000 (in hex)
     
     ret
@@ -54,24 +54,24 @@ MathAdd:
     add b           ; add b to a
     jr SaveResult   ; save the result
 
-MathMul:            ; Example b=3, c=4
-    ld a, c         ; load c into a (a=4, b=3, c=4, d=0)
-    add b           ; add b and a   (a=7, b=3, c=4, d=0)
-    ld c, a         ; load a into c (a=7, b=3, c=7, d=0)
-    ld a, b         ; load b into a (a=3, b=3, c=7, d=0)
-    dec a           ; decrement a   (a=2, b=3, c=7, d=0)
-    cp 0            ; compare a to 0
-    jr z, LoadAndSaveResult    ; save result if a=0
+MathMul:            ; Example b=3, c=7
+    ld a, c         ; load c into a (a=7, b=3, c=7, d=0)
+    add c           ; add c and a   (a=14, b=3, c=7, d=0)
+    ld d, a         ; load a into d (a=14, b=3, c=7, d=14)
+    ld a, b         ; load b into a (a=14, b=3, c=7, d=14)
+    dec a           ; decrement a   (a=2, b=3, c=7, d=14)
+    cp 1            ; compare a to 1
+    jr z, LoadAndSaveResult    ; save result if a=1
     jr nz, MathMulAgain
 
 MathMulAgain:
-    ld d, a         ; load a into d (a=2, b=3, c=7, d=2)
-    ld a, c         ; load c into a (a=7, b=3, c=7, d=2)
-    add b           ; add b and a   (a=10, b=3, c=7, d=2)
+    ld b, a         ; load a into b (a=2, b=2, c=7, d=14)
+    ld a, d         ; load d into a (a=14, b=2, c=7, d=14)
+    add c           ; add c and a   (a=21, b=2, c=7, d=14)
 
-    ld c, a         ; load a into c (a=10, b=3, c=10, d=2)
-    ld a, d         ; load d into a (a=2, b=3, c=10, d=2)
-    dec a           ; decrement a   (a=1, b=3, c=10, d=2)
-    cp 0            ; compare a to 0
+    ld d, a         ; load a into d (a=21, b=2, c=7, d=21)
+    ld a, b         ; load b into a (a=2, b=2, c=7, d=21)
+    dec a           ; decrement a   (a=1, b=2, c=7, d=21)
+    cp 1            ; compare a to 1
     jr z, LoadAndSaveResult
     jr nz, MathMulAgain
