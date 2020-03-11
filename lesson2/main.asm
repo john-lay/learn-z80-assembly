@@ -16,17 +16,19 @@ entryPoint:
 ; Lesson 2
 Init:
     ld a, $ff       ; load 255 into a
-    ld bc, $A000-1  ; initialise bc with representation of last memory address of VRAM
+    ld bc, $9ff0    ; initialise bc with representation of last memory address of VRAM
     ld hl, $8000    ; initialise hl with representation of first memory address of VRAM
     ld [$8000], a   ; load a into first value of VRAM
     
 FillAgain:
-    inc hl          ; increment hl
-    ld [hl], a      ; load a into memory location represented by hl
-
-    ; perform a compare (cp) on 2 16-bit values http://z80-heaven.wikidot.com/optimization
-    ; or a                ; clear carry flag
-    ; sbc bc, hl          ; subtract hl from bc i.e. hl - bc
-    ; add bc, hl          ; add hl to bc i.e. hl + bc
-    ; jr nc, FillAgain    ; relative jump no-carry
+    ld a, $ff           ; reset a (as we load the values of h and l later for checking if we've finished filling)
+    inc hl              ; increment hl
+    ld [hl], a          ; load a into memory location represented by hl    
+    ld a, h             ; load h into a
+    cp $9f              ; compare a to last memory address of VRAM (0x9ff0) - first 8 bits 0x9f
+    jp nz, FillAgain    ; if we're not at the end of our fill area, then fill again
+    ld a, l             ; load l into a
+    cp $f0              ; compare a to last memory address of VRAM (0x9ff0) - last 8 bits 0xf0
+    jp nz, FillAgain    ; if we're not at the end of our fill area, then fill again
+    
     ret

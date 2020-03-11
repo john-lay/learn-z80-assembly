@@ -11,10 +11,12 @@ Write to Working RAM and play with values in registries `a` and `b`.
 
 ![screenshot of lesson1](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson1/lesson1-screenshot.png)
 
-## Lesson 2 (WIP)- LDIR, Labels, Definitions, Conditions and Loops
+## Lesson 2 - LDIR, Labels, Definitions, Conditions and Loops
 
 The LDIR (Load, Increment, Repeat) instruction is missing from the Gameboy instruction set.
 Play with  labels and a loop to fill VRAM.
+
+![screenshot of lesson2](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson2/lesson2-screenshot.png)
 
 ## Lesson 3 - Case Statement, 8-bit arithmetic
 
