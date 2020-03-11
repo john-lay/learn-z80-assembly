@@ -5,6 +5,20 @@ Working through generic Z80 tutorial, but applying it to the Gameboy.
 
 Screenshots taken of the lessons running in [BGB](http://bgb.bircd.org/)
 
+# Build
+
+## Prerequisites
+
+Gameboy build pipeline, [RGBDS](https://github.com/rednex/rgbds/releases).
+
+## Building the rom
+Clone the repo and open a terminal in the source directory for a given lesson and run the following commands (replacing lesson1 with the specific lesson):
+* `rgbasm -o main.o main.asm`
+* `rgblink -o lesson1.gb main.o`
+* `rgbfix -v -p 0 lesson1.gb`
+
+---
+
 ## Lesson 1 - Load (ld), Increment (inc), Add (add) and Return (ret)
 
 Write to Working RAM and play with values in registries `a` and `b`.
@@ -26,14 +40,3 @@ The DJNZ (Decrement, Jump if Not Zero) (only works in the `b` register) instruct
 
 ![screenshot of lesson3](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson3/lesson3-screenshot.png)
 
-# Build
-
-## Prerequisites
-
-Gameboy build pipeline, [RGBDS](https://github.com/rednex/rgbds/releases).
-
-## Building the rom
-Clone the repo and open a terminal in the source directory for a given lesson and run the following commands (replacing lesson1 with the specific lesson):
-* `rgbasm -o main.o main.asm`
-* `rgblink -o lesson1.gb main.o`
-* `rgbfix -v -p 0 lesson1.gb`
