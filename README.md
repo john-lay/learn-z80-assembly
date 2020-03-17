@@ -40,3 +40,7 @@ The DJNZ (Decrement, Jump if Not Zero) (only works in the `b` register) instruct
 
 ![screenshot of lesson3](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson3/lesson3-screenshot.png)
 
+## Lesson 4 - Stack, Strings, IFDEF, IX, IY, Call
+
+Writing ASCII characters to memory and invoke sub-routines with call.
+
