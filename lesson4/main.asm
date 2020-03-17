@@ -16,10 +16,17 @@ entryPoint:
 ; Lesson 4
 init:
     call initSave   ; initialise hl to store pointer to RAM
-    ld a, $4a       ; load 'J' into a (a=74d, a=0x4a)
+    ld a, $61       ; load 'a' into a (a=97d, a=0x61)
     call printChar
-    ld [temp], a
+    ld [temp], a    ; load a into temp (temp='0x61')
     ld a, $7c       ; load '|' into a (a=124d, a=0x7c)
+    call printChar
+    ld [temp2], a   ; load a into temp2 (temp2='0x7c')
+    ld a, $78       ; load 'x' into a (a=120d, a=0x78)
+    call printChar
+    ld a, [temp2]   ; load temp2 into a (a='0x7c')
+    call printChar
+    ld a, [temp]    ; load temp into a (a='0x61')
     call printChar
 
     ret

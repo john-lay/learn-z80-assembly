@@ -42,5 +42,5 @@ The DJNZ (Decrement, Jump if Not Zero) (only works in the `b` register) instruct
 
 ## Lesson 4 - Stack, Strings, IFDEF, IX, IY, Call
 
-Writing ASCII characters to memory and invoke sub-routines with call.
+Writing ASCII characters to memory and invoke sub-routines with call. Use temporary variables with define byte (db)
 
