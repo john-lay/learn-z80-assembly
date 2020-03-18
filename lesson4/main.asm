@@ -16,23 +16,22 @@ entryPoint:
 ; Lesson 4
 init:
     call initSave   ; initialise hl to store pointer to RAM
-    ld a, $61       ; load 'a' into a (a=97d, a=0x61)
+    ld a, [charA]   ; load 'a' into a (a=97d, a=0x61)
     call printChar
-    ld [temp], a    ; load a into temp (temp='0x61')
-    ld a, $7c       ; load '|' into a (a=124d, a=0x7c)
+    ld a, [charBar] ; load '|' into a (a=124d, a=0x7c)
     call printChar
-    ld [temp2], a   ; load a into temp2 (temp2='0x7c')
-    ld a, $78       ; load 'x' into a (a=120d, a=0x78)
+    ld a, [charX]   ; load 'x' into a (a=120d, a=0x78)
     call printChar
-    ld a, [temp2]   ; load temp2 into a (a='0x7c')
+    ld a, [charBar] ; load '|' into a (a=124d, a=0x7c)
     call printChar
-    ld a, [temp]    ; load temp into a (a='0x61')
+    ld a, [charA]   ; load 'a' into a (a=97d, a=0x61)
     call printChar
 
     ret
 
-temp: db 0
-temp2: db 0
+charA: db $61       ; define byte (db) with value 'a' (charA=97d, charA=0x61)
+charX: db $78       ; define byte (db) with value 'x' (charX=120d, charX=0x78)
+charBar: db $7c     ; define byte (db) with value '|' (charBar=124d, charBar=0x7c)
 
 initSave:
     ld hl, _RAM     ; initialise hl with memory location of _RAM (0xc000)
