@@ -18,13 +18,17 @@ init:
     call initSave   ; initialise hl to store pointer to RAM
     ld a, [charA]   ; load 'a' into a (a=97d, a=0x61)
     call printChar
-    ld a, [charBar] ; load '|' into a (a=124d, a=0x7c)
-    call printChar
-    ld a, [charX]   ; load 'x' into a (a=120d, a=0x78)
-    call printChar
-    ld a, [charBar] ; load '|' into a (a=124d, a=0x7c)
-    call printChar
-    ld a, [charA]   ; load 'a' into a (a=97d, a=0x61)
+    push af
+        ld a, [charBar] ; load '|' into a (a=124d, a=0x7c)
+        call printChar
+        push af
+            ld a, [charX]   ; load 'x' into a (a=120d, a=0x78)
+            call printChar
+        pop af
+        ; ld a, [charBar] ; load '|' into a (a=124d, a=0x7c)
+        call printChar
+    pop af
+    ; ld a, [charA]   ; load 'a' into a (a=97d, a=0x61)
     call printChar
 
     ret

@@ -42,6 +42,7 @@ The DJNZ (Decrement, Jump if Not Zero) (only works in the `b` register) instruct
 
 ## Lesson 4 - Stack, Strings, IFDEF, IX, IY, Call
 
-Writing ASCII characters to memory and invoke sub-routines with call. Create constants with define byte (db)
+Writing ASCII characters to memory and invoke sub-routines with call. Create constants with define byte (db).
+Manipulate the stack with (push) and (pop)
 
 ![screenshot of lesson4](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson4/lesson4-screenshot.png)
