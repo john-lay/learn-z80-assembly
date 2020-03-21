@@ -35,12 +35,17 @@ init:
     call printString
     ld de, awesomeMsg
     call printString
-    
+    ld a, [squareBrackets]      ; print first character of "[]" i.e. "["
+    call printChar
+    ld a, [squareBrackets+1]    ; print second character of "[]" i.e. "]"
+    call printChar
+
     ret
 
 charA: db $61       ; define byte (db) with value 'a' (charA=97d, charA=0x61)
 charX: db $78       ; define byte (db) with value 'x' (charX=120d, charX=0x78)
 charBar: db $7c     ; define byte (db) with value '|' (charBar=124d, charBar=0x7c)
+squareBrackets: db "[]"
 thoughtMsg: db "Thought of the day...", 255     ; string ends with 255
 awesomeMsg: db "Z80 is Awesome!", 255           ; use 255 as terminating string
 
