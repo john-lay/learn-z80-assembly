@@ -27,7 +27,7 @@ Write to Working RAM and play with values in registries `a` and `b`.
 
 ## Lesson 2 - LDIR, Labels, Definitions, Conditions and Loops
 
-The LDIR (Load, Increment, Repeat) instruction is missing from the Gameboy instruction set.
+The Load, Increment, Repeat (LDIR) instruction is missing from the Gameboy instruction set.
 Play with  labels and a loop to fill VRAM.
 
 ![screenshot of lesson2](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson2/lesson2-screenshot.png)
@@ -40,9 +40,12 @@ The DJNZ (Decrement, Jump if Not Zero) (only works in the `b` register) instruct
 
 ![screenshot of lesson3](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson3/lesson3-screenshot.png)
 
-## Lesson 4 - Stack, Strings, IFDEF, IX, IY, Call
+## Lesson 4 - Stack, Strings, Call
 
-Writing ASCII characters to memory and invoke sub-routines with call. Create character and string constants with define byte (db).
-Manipulate the stack with (push) and (pop)
+* Writing ASCII characters to memory and invoke sub-routines with (call). 
+* Create character and string constants with define byte (db).
+* Manipulate the stack with (push) and (pop). 
+* If def (IFDEF, ELSE and ENDIF) are compiler features that threw a `Macro 'someMacro' not defined` error with RGBDS.
+* The indirect registers (IX, and IY) are  missing from the Gameboy.
 
 ![screenshot of lesson4](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson4/lesson4-screenshot.png)
