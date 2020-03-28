@@ -49,3 +49,14 @@ The DJNZ (Decrement, Jump if Not Zero) (only works in the `b` register) instruct
 * The indirect registers (IX, and IY) are  missing from the Gameboy.
 
 ![screenshot of lesson4](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson4/lesson4-screenshot.png)
+
+## Lesson 5 - Bit level operations
+
+Expand on the code used in lesson 2 to fill the video RAM and play with the following bit level instructions:
+
+* Use bitwise operators: and (and), or (or) and exclusive OR (xor).
+* Use set (set) and reset (res) commands to set single bit in a byte.
+* Use bit (bit) operator to compare a single bit to 1.
+* Bitwise operators only work on register a, whereas set, reset and bit work on all registers.
+
+![screenshot of lesson5](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson5/lesson5-screenshot.png)
