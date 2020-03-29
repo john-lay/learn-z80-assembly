@@ -27,7 +27,7 @@ FillAgain:
     ;and %11110000       ; and operation on a
     ;or %11110000        ; or operation on a
     ;set 0, a            ; set specific bit to 1. (and leave the rest as 0) Equivalent to (or %00000001)
-    res 7, a            ; set specific bit to 0. (and leave the rest as 1) Equivalent to (and %01111111)
+    ; res 7, a            ; set specific bit to 0. (and leave the rest as 1) Equivalent to (and %01111111)
     ; bit 7, a            ; cp %10000000
 
     inc hl              ; increment hl
@@ -39,4 +39,22 @@ FillAgain:
     cp $f0              ; compare a to last memory address of VRAM (0x9ff0) - last 8 bits 0xf0
     jp nz, FillAgain    ; if we're not at the end of our fill area, then fill again
     
+    call PlayWithVRAM
+
+PlayWithVRAM:
+    ld a, [hl]
+    ; ------------------- Makes the emulator beep and slowly flicks through 3 colors: White, black and one grey.
+    ; rr a                ; rotates bits in a right with carry (RRA is actually faster).
+    ; ------------------- Makes the screen flick through 3 colors: White, black and one grey.
+    ; rrc a               ; rotates bits in a with wrap (RRCA is actually faster).
+    ; ------------------- Makes the emulator produce a scratching sound at regular intervals. Flicks to white, then stays black.
+    ; sra a               ; shifts the bits in a right. top bit = previous top bit
+    ; ------------------- Screen switches from black (from FillAgain) then to white.
+    srl a               ; shifts the bits in a right, top bit 0
+    ld [hl], a
+    inc l
+    jp nz, PlayWithVRAM
+    inc h
+    jp nz, PlayWithVRAM
+
     ret
