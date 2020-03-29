@@ -58,7 +58,9 @@ Expand on the code used in lesson 2 to fill the video RAM and play with the foll
 * Use set (set) and reset (res) commands to set single bit in a byte.
 * Use bit (bit) operator to compare a single bit to 1.
 * Bitwise operators only work on register a, whereas set, reset and bit work on all registers.
-* Rotate bits with (rr) and (rrc)
-* Shift bits with (sra) and (srl)
+* Rotate bits with carry left (rl) and right (rr).
+* Rotate bits with wrap left (rlc) and right (rrc).
+* Shift bits right while maintaining top bit (sra) and left (sla).
+* Shifts bits right while losing the top bit (srl) and left (swap). (sll) instruction is missing from the Gameboy instruction set.
 
 ![screenshot of lesson5](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson5/lesson5-screenshot.png)

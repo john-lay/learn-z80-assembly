@@ -45,12 +45,17 @@ PlayWithVRAM:
     ld a, [hl]
     ; ------------------- Makes the emulator beep and slowly flicks through 3 colors: White, black and one grey.
     ; rr a                ; rotates bits in a right with carry (RRA is actually faster).
+    ; rl a                ; rotate left with carry
     ; ------------------- Makes the screen flick through 3 colors: White, black and one grey.
     ; rrc a               ; rotates bits in a with wrap (RRCA is actually faster).
+    ; rlc a               ; rotate left with wrap
     ; ------------------- Makes the emulator produce a scratching sound at regular intervals. Flicks to white, then stays black.
     ; sra a               ; shifts the bits in a right. top bit = previous top bit
+    ; sla a               ; shift left bottom bit 0
     ; ------------------- Screen switches from black (from FillAgain) then to white.
-    srl a               ; shifts the bits in a right, top bit 0
+    ; srl a               ; shifts the bits in a right, top bit 0
+    swap a               ; shift left bottom bit 1. sll is not available in gb assembly, it's replaced with swap.
+    
     ld [hl], a
     inc l
     jp nz, PlayWithVRAM
