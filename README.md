@@ -64,3 +64,9 @@ Expand on the code used in lesson 2 to fill the video RAM and play with the foll
 * Shifts bits right while losing the top bit (srl) and left (swap). (sll) instruction is missing from the Gameboy instruction set.
 
 ![screenshot of lesson5](https://github.com/john-lay/learn-z80-assembly/raw/master/lesson5/lesson5-screenshot.png)
+
+## Lesson H9 - Hello, World!
+
+Hello, World! example using external font, palettes and managed LCD lifecycle.
+
+![screenshot of lessonh9](https://github.com/john-lay/learn-z80-assembly/raw/master/lessonh9/lessonh9-screenshot.png)
