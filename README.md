@@ -5,6 +5,14 @@ Working through generic Z80 tutorial, but applying it to the Gameboy.
 
 Screenshots taken of the lessons running in [BGB](http://bgb.bircd.org/)
 
+## Lesson Summary
+* __Lesson 1__ Simple minimal example. Read and write to (working) memory
+* __Lesson 2__ Keep track of pointer in memory and flood VRAM (video memory)
+* __Lesson 3__ Addition, Subtraction, Multiplication and Division
+* __Lesson 4__ Strings and Characters
+* __Lesson 5__ Bit level operations
+* __Lesson h9__ Hello World
+
 # Build
 
 ## Prerequisites
